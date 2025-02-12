@@ -45,6 +45,8 @@ jobs:
         run: |
           echo checking python3
           python3 --version
+          python3 -m pip install semgrep
+          semgrep --version
 
       # Scan code using project's configuration on https://semgrep.dev/manage
       #- uses: returntocorp/semgrep-action@fcd5ab7459e8d91cb1777481980d1b18b4fc6735
