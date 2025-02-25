@@ -17,6 +17,12 @@ jobs:
           chmod +x ./snyk
           ./snyk code test --sarif-file-output=snyk.sarif
           ls -l snyk.sarif
+
+      - name: Checking Sarif file 
+        run: |
+          echo Checking Sarif file
+          ls -l snyk.sarif
+      
           
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
