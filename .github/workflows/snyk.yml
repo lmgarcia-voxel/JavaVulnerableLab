@@ -15,7 +15,8 @@ jobs:
           echo Downloading    
           curl https://static.snyk.io/cli/latest/snyk-linux -o snyk
           chmod +x ./snyk
-          ./snyk code test --sarif --sarif-file-output=snyk.sarif
+          ./snyk code test --sarif-file-output=snyk.sarif
+          ls -l snyk.sarif
           
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
